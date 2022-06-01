@@ -2,6 +2,8 @@ FROM alpine
 
 ENV NANOMDM_VERSION="0.2.0"
 
+VOLUME "/db"
+
 RUN apk --no-cache add curl
 RUN apk --update add ca-certificates
 RUN curl -L https://github.com/micromdm/nanomdm/releases/download/v${NANOMDM_VERSION}/nanomdm-linux-amd64-v${NANOMDM_VERSION}.zip -o /nanomdm.zip
