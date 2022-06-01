@@ -4,6 +4,8 @@ RUN apk add --no-cache make git
 RUN git clone https://github.com/micromdm/nanomdm.git /go/src/github.com/micromdm/nanomdm
 
 WORKDIR /go/src/github.com/micromdm/nanomdm
+RUN ls -la /go/src/github.com/micromdm/nanomdm
+RUN ls -la
 
 ENV CGO_ENABLED=0 \
 	GOARCH=amd64 \
