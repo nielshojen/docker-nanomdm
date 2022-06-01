@@ -10,17 +10,14 @@ ENV CGO_ENABLED=0 \
 	GOOS=linux
 
 RUN make
-RUN ls -la /go/src/github.com/micromdm/nanomdm/cmd/nanomdm
-RUN ls -la /go/src/github.com/micromdm/nanomdm/cmd/nano2nano
-RUN ls -la /go/src/github.com/micromdm/nanomdm/cmd/cli
 
 FROM alpine
 
 VOLUME "/db"
 
 RUN apk --update add ca-certificates
-COPY --from=builder /go/src/github.com/micromdm/nanomdm/cmd/nanomdm/nanomdm-linux-amd64 /usr/local/bin/nanomdm
-COPY --from=builder /go/src/github.com/micromdm/nanomdm/cmd/nano2nano/nano2nano-linux-amd64 /usr/local/bin/nano2nano
+COPY --from=builder /go/src/github.com/micromdm/nanomdm/nanomdm-linux-amd64 /usr/local/bin/nanomdm
+COPY --from=builder /go/src/github.com/micromdm/nanomdm/nano2nano-linux-amd64 /usr/local/bin/nano2nano
 RUN chmod a+x /usr/local/bin/nanomdm
 RUN chmod a+x /usr/local/bin/nano2nano
 
