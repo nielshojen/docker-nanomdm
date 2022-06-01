@@ -10,8 +10,7 @@ ENV CGO_ENABLED=0 \
 	GOOS=linux
 
 RUN make
-RUN ls -la /go/src/github.com/micromdm/nanomdm
-RUN ls -la
+RUN ls -la /go/src/github.com/micromdm/nanomdm/cmd
 
 FROM alpine
 
