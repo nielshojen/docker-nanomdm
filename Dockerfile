@@ -11,7 +11,7 @@ RUN mv /nanomdm-linux-amd64-v${NANOMDM_VERSION}/nanomdm-linux-amd64 /usr/local/b
 RUN mv /nanomdm-linux-amd64-v${NANOMDM_VERSION}/nano2nano-linux-amd64 /usr/local/bin/nano2nano
 RUN chmod a+x /usr/local/bin/nanomdm
 RUN chmod a+x /usr/local/bin/nano2nano
-RUN rm -rf /nanomdm-linux-amd64-v${NANOMDM_VERSION
+RUN rm -rf /nanomdm-linux-amd64-v${NANOMDM_VERSION}
 RUN apk del curl
 
 VOLUME "/db"
