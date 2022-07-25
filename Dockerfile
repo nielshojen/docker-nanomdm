@@ -8,7 +8,9 @@ RUN curl -L https://github.com/micromdm/nanomdm/releases/download/v${NANOMDM_VER
 RUN unzip /nanomdm.zip
 RUN rm /nanomdm.zip
 RUN mv /nanomdm-linux-amd64 /usr/local/bin/nanomdm
+RUN mv /nano2nano-linux-amd64 /usr/local/bin/nano2nano
 RUN chmod a+x /usr/local/bin/nanomdm
+RUN chmod a+x /usr/local/bin/nano2nano
 RUN apk del curl
 
 VOLUME "/db"
