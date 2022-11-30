@@ -21,6 +21,9 @@ COPY --from=builder /go/src/github.com/micromdm/nanomdm/nano2nano-linux-amd64 /u
 RUN chmod a+x /usr/local/bin/nanomdm
 RUN chmod a+x /usr/local/bin/nano2nano
 
+COPY run.sh /run.sh
+RUN chmod a+x /run.sh
+
 EXPOSE 9000
 
-ENTRYPOINT ["/usr/local/bin/nanomdm"]
+CMD ["/run.sh"]
