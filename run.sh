@@ -6,7 +6,7 @@ execServe="/usr/local/bin/nanomdm"
 
 # CA Cert path
 if [[ ${CAPATH} ]]; then
-  execServe="${execServe} -capass ${CAPASS}"
+  execServe="${execServe} -ca ${CAPASS}"
 fi
 
 # CA Cert path
