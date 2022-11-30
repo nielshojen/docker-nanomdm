@@ -16,6 +16,9 @@ RUN apk del curl
 
 VOLUME "/db"
 
+COPY run.sh /run.sh
+RUN chmod a+x /run.sh
+
 EXPOSE 9000
 
-ENTRYPOINT ["/usr/local/bin/nanomdm"]
+CMD ["/run.sh"]
