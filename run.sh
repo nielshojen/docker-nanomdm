@@ -4,11 +4,14 @@
 
 execServe="/usr/local/bin/nanomdm"
 
-./nanomdm-darwin-amd64 -ca ca.pem -api nanomdm -debug
-
 # CA Cert path
 if [[ ${CAPATH} ]]; then
   execServe="${execServe} -capass ${CAPASS}"
+fi
+
+# CA Cert path
+if [[ ${CAPATH} ]] && [[ ${SCEP_URL} ]]; then
+  curl 'https://${SCEP_URL}/scep?operation=GetCACert' | openssl x509 -inform DER > ${CAPATH}
 fi
 
 # API Key - Required
