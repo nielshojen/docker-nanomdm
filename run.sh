@@ -11,9 +11,10 @@ fi
 
 # CA Cert path
 if [[ ${CAPATH} ]] && [[ ${SCEP_URL} ]]; then
+  apk add openssl
   curl '${SCEP_URL}/scep?operation=GetCACert' | openssl x509 -inform DER > ${CAPATH}
+  apk del openssl
 fi
-
 # API Key - Required
 if [[ ! ${API_KEY} ]]; then
   /bin/echo "No API Key Set - Exiting"
