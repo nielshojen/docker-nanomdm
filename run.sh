@@ -11,7 +11,7 @@ fi
 
 # CA Cert path
 if [[ ${CAPATH} ]] && [[ ${SCEP_URL} ]]; then
-  curl 'https://${SCEP_URL}/scep?operation=GetCACert' | openssl x509 -inform DER > ${CAPATH}
+  curl '${SCEP_URL}/scep?operation=GetCACert' | openssl x509 -inform DER > ${CAPATH}
 fi
 
 # API Key - Required
