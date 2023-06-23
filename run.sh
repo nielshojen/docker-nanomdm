@@ -37,6 +37,11 @@ else
   execServe="${execServe} -storage mysql -dsn '${DBUSER}:${DBPASS}@tcp(${DBHOST:=127.0.0.1}:${DBPORT:=3306})/${DBNAME}'"
 fi
 
+# Declarative Management
+if [[ ${DM} ]]; then
+  execServe="${execServe} -dm ${DM}"
+fi
+
 # Port to listen on (default ":9000")
 if [[ ${LISTEN} ]]; then
   execServe="${execServe} -listen ${LISTEN}"
