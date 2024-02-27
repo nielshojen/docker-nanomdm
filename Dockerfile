@@ -1,6 +1,6 @@
 FROM alpine
 
-ENV NANOMDM_VERSION="0.5.0"
+ENV NANOMDM_VERSION="0.6.0"
 
 RUN apk --no-cache add curl
 RUN apk --update add ca-certificates
