@@ -33,7 +33,7 @@ if [[ ! ${DBUSER} ]] && [[ ! ${DBPASS} ]] && [[ ! ${DBNAME} ]]; then
   /bin/echo "Cannot set DSN - Exiting"
   exit 1
 else
-  execServe="${execServe} -storage mysql -dsn '${DBUSER}:${DBPASS}@tcp(${DBHOST:=127.0.0.1}:${DBPORT:=3306})/${DBNAME}'"
+  execServe="${execServe} -storage mysql -storage-dsn '${DBUSER}:${DBPASS}@tcp(${DBHOST:=127.0.0.1}:${DBPORT:=3306})/${DBNAME}'"
 fi
 
 # Declarative Management
