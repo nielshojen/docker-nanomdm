@@ -17,11 +17,11 @@ if [[ ${CAPATH} ]] && [[ ${SCEP_URL} ]]; then
 fi
 
 # API Key - Required
-if [[ ! ${API_KEY} ]]; then
+if [[ ! ${MDM_API_KEY} ]]; then
   /bin/echo "No API Key Set - Exiting"
   exit 1
 else
-  execServe="${execServe} -api ${API_KEY}"
+  execServe="${execServe} -api ${MDM_API_KEY}"
 fi
 
 # Set debug
@@ -30,7 +30,7 @@ if [[ "${DEBUG}" = "true" ]]; then
 fi
 
 # DSN - Required
-if [[ ! ${DBUSER} ]] && [[ ! ${DBPASS} ]] && [[ ! ${DBNAME} ]]; then
+if [[ ! ${MDM_DBUSER} ]] && [[ ! ${MDM_DBPASS} ]] && [[ ! ${MDM_DBNAME} ]]; then
   /bin/echo "Cannot set DSN - Exiting"
   exit 1
 else
