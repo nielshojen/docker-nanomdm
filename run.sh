@@ -52,6 +52,11 @@ if [[ ${WEBHOOK_URL} ]]; then
   execServe="${execServe} -webhook-url ${WEBHOOK_URL}"
 fi
 
+# Webhook URL
+if [[ ${MIGRATION} ]]; then
+  execServe="${execServe} -migration"
+fi
+
 echo "Starting using: $execServe"
 
 eval $execServe
